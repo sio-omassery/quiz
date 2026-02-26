@@ -924,12 +924,18 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">×</button>
             <h2 class="section-title" style="margin-top: 0;">Guidelines</h2>
-            <ul class="guidelines-list">
-                <li>The competition is exclusive to residents of Omassery Area.</li>
-                <li>Separate competitions will be held for Brothers and Sisters.</li>
-                <li>Each quiz will be open from 5:00 PM to 5:00 PM the next day on the scheduled date.</li>
-                <li>Two prizes will be awarded for men and two for women in each category.</li>
-                <li>Participants should reflect on Surah Al-Mumtahina before attempting the quiz.</li>
+            
+            
+            <!-- Malayalam Guidelines -->
+            <ul class="guidelines-list" style="font-family: 'Amiri', serif;">
+                <!-- <li>ഈ മത്സരം അമാസറി പ്രദേശത്തിന്റെ നിവാസികൾക്കായി മാത്രമാണ്.</li> -->
+                <li>പുരുഷന്മാർക്കും സ്ത്രീകൾക്കും വെവ്വേറെ മത്സരങ്ങൾ നടത്തുന്നതായിരിക്കും.</li>
+                <li>ക്വിസ് നിശ്ചിത തീയതിയിലെ 4:00 PM മുതൽ അടുത്ത ദിവസം 4:00 PM വരെ നടത്തുന്നതായിരിക്കും.</li>
+                <li>ഓരോ വിഭാഗത്തിലും പുരുഷന്മാർക്കും സ്ത്രീകൾക്കും വീതം 2 പേർക്കു സമ്മാനങ്ങൾ നൽകുന്നതായിരിക്കും.</li>
+                <li>ക്വിസിന് മുൻപായി പങ്കെടുക്കുന്നവർ സൂരത്തൽ മുമ്താഹിന ചിന്തിച്ചു നോക്കേണ്ടതാണ്.</li>
+                <li>ക്വിസ് Google Form വഴി നടത്തുന്നതായിരിക്കും.</li>
+                <li>ഒരേ സ്കോർ ലഭിക്കുന്ന സാഹചര്യത്തിൽ, ആദ്യം സബ്മിറ്റ് ചെയ്യുന്ന വ്യക്തിക്ക് മുൻഗണന നൽകും.</li>
+                <li>ഓരോ വിഭാഗത്തിലും ഏറ്റവും കൂടുതൽ മാർക്ക് നേടുന്ന 2 പേർക്ക് സമ്മാനങ്ങൾ ഉണ്ടായിരിക്കും.</li>
             </ul>
         </div>
     </div>
@@ -1047,10 +1053,10 @@
             for (let quiz of quizSchedule) {
                 const quizDate = new Date(quiz.date);
                 const quizStart = new Date(quiz.date);
-                quizStart.setHours(17, 0, 0, 0); // 5:00 PM start
+                quizStart.setHours(16, 0, 0, 0); // 4:00 PM start
                 const quizEnd = new Date(quiz.date);
                 quizEnd.setDate(quizEnd.getDate() + 1); // Next day
-                quizEnd.setHours(17, 0, 0, 0); // 5:00 PM end
+                quizEnd.setHours(16, 0, 0, 0); // 4:00 PM end
 
                 // Check if quiz is currently active
                 if (now >= quizStart && now <= quizEnd) {
@@ -1138,10 +1144,10 @@
 
             for (let quiz of quizSchedule) {
                 const quizStart = new Date(quiz.date);
-                quizStart.setHours(17, 0, 0, 0); // 5:00 PM start
+                quizStart.setHours(16, 0, 0, 0); // 4:00 PM start
                 const quizEnd = new Date(quiz.date);
                 quizEnd.setDate(quizEnd.getDate() + 1); // Next day
-                quizEnd.setHours(17, 0, 0, 0); // 5:00 PM end
+                quizEnd.setHours(16, 0, 0, 0); // 4:00 PM end
 
                 if (now >= quizStart && now <= quizEnd) {
                     activeQuiz = quiz;
