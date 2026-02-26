@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ramadan Reflections Quiz 2026 - An online quiz competition based on Surah Al-Mumtahina for SIO Omassery Area residents. Test your knowledge of the Holy Quran during Ramadan.">
+    <title>Ramadan Reflections Quiz 2026 | SIO Omassery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Open Graph / WhatsApp preview image -->
+    <meta property="og:title" content="Ramadan Reflections Quiz 2026 | SIO Omassery">
+    <meta property="og:description" content="Ramadan Reflections Quiz 2026 -An online quiz competition based on Surah Al-Mumtahina for SIO Omassery Area residents.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="poster.png">
+    <meta property="og:url" content="./poster.png">
+    <style>
+        :root {
+            --primary-gold: #d4af37;
+            --dark-gold: #b8941f;
+            --deep-navy: #0a1628;
+            --midnight: #0f1b2e;
+            --sand: #e6d5b8;
+            --light-sand: #f5efe6;
+            --star-glow: rgba(212, 175, 55, 0.6);
+            --text-light: #f0f0f0;
+            --text-muted: #a0aec0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--deep-navy);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Animated Stars Background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .star.star-gold {
+            background: var(--primary-gold);
+            box-shadow: 0 0 15px var(--primary-gold);
+            animation: twinkleGold 4s infinite ease-in-out;
+        }
+
+        .star.star-large {
+            animation: twinkleLarge 5s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @keyframes twinkleGold {
+            0%, 100% { opacity: 0.2; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.8; transform: scale(1.5) rotate(180deg); }
+        }
+
+        @keyframes twinkleLarge {
+            0%, 100% { opacity: 0.1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(2); }
+        }
+
+        /* Dunes Background */
+        .dunes {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40vh;
+            background: linear-gradient(to top, #1a1a2e 0%, transparent 100%);
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .dune-shape {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(180deg, rgba(26,26,46,0) 0%, rgba(10,22,40,0.8) 100%);
+            border-radius: 100% 100% 0 0;
+            animation: duneWave 8s ease-in-out infinite;
+        }
+
+        .dune-shape:nth-child(2) {
+            animation-delay: -4s;
+            animation-duration: 10s;
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+            position: relative;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #f4e5c2 50%, var(--primary-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease-out 0.2s both, shimmer 3s ease-in-out infinite alternate;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .subtitle {
+            font-family: 'Amiri', serif;
+            font-size: 1.5rem;
+            color: var(--sand);
+            margin-bottom: 10px;
+            font-style: italic;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .organization {
+            color: var(--primary-gold);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        /* Timer Section - Dynamic */
+        .timer-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(10, 22, 40, 0.6) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 800px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px rgba(212, 175, 55, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .timer-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-gold), transparent, var(--primary-gold));
+            border-radius: 20px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .timer-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .timer-display {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: nowrap;
+            margin: 20px 0;
+        }
+
+        .time-unit {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            min-width: 80px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .time-unit::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            animation: timeGlow 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .time-unit:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2), 0 0 20px rgba(212, 175, 55, 0.3);
+            border-color: var(--primary-gold);
+        }
+
+        .time-value {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            display: block;
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .timer-status {
+            margin-top: 20px;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        .status-upcoming {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--primary-gold);
+            border: 1px solid var(--primary-gold);
+        }
+
+        .status-active {
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+            border: 1px solid #4ade80;
+        }
+
+        .status-ended {
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            border: 1px solid #f87171;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* CTA Buttons */
+        .cta-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--dark-gold) 100%);
+            color: var(--deep-navy);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Content Sections */
+        .section {
+            background: rgba(15, 27, 46, 0.6);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--primary-gold), transparent);
+            margin-left: 15px;
+        }
+
+        .about-text {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .highlight {
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        /* Schedule Grid */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .quiz-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(10, 22, 40, 0.4) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--primary-gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(212, 175, 55, 0.3);
+            animation: cardGlow 2s ease-in-out infinite alternate;
+        }
+
+        .quiz-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-gold), transparent, var(--primary-gold));
+            border-radius: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .quiz-card:hover::before {
+            opacity: 0.3;
+        }
+
+        .quiz-card.active {
+            border-color: #4ade80;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(10, 22, 40, 0.4) 100%);
+        }
+
+        .quiz-card.active::before {
+            content: 'LIVE NOW';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: #4ade80;
+            color: var(--deep-navy);
+            padding: 5px 40px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 10px rgba(34, 197, 94, 0.3);
+        }
+
+        .quiz-card.past {
+            opacity: 0.6;
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .quiz-date {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+        }
+
+        .quiz-part {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .quiz-topic {
+            font-family: 'Amiri', serif;
+            font-size: 1.4rem;
+            color: var(--sand);
+            margin-bottom: 15px;
+        }
+
+        .quiz-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--dark-gold) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: var(--deep-navy);
+        }
+
+        .feature-title {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Guidelines Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, var(--midnight) 0%, var(--deep-navy) 100%);
+            border: 1px solid var(--primary-gold);
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        .modal-close:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-gold);
+        }
+
+        .guidelines-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .guidelines-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .guidelines-list li::before {
+            content: '✦';
+            color: var(--primary-gold);
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.5); }
+            100% { text-shadow: 0 0 30px rgba(212, 175, 55, 0.8), 0 0 40px rgba(212, 175, 55, 0.3); }
+        }
+
+        @keyframes cardGlow {
+            0% { box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(212, 175, 55, 0.3); }
+            100% { box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 40px rgba(212, 175, 55, 0.5), 0 0 50px rgba(212, 175, 55, 0.2); }
+        }
+
+        @keyframes duneWave {
+            0%, 100% { transform: translateX(0) scaleY(1); }
+            50% { transform: translateX(5px) scaleY(1.05); }
+        }
+
+        @keyframes timeGlow {
+            0%, 100% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px 30px;
+            }
+            
+            .timer-section {
+                padding: 30px 20px;
+            }
+            
+            .time-unit {
+                min-width: 60px;
+                padding: 15px;
+            }
+            
+            .time-value {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .schedule-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .quiz-card {
+                padding: 20px;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+
+            .guidelines-list li {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 15px 20px;
+            }
+
+            h1 {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .timer-section {
+                padding: 20px 15px;
+                margin: 20px auto;
+            }
+
+            .timer-display {
+                gap: 8px;
+            }
+
+            .time-unit {
+                min-width: 45px;
+                padding: 8px;
+            }
+
+            .time-value {
+                font-size: 1.5rem;
+            }
+
+            .time-label {
+                font-size: 0.7rem;
+            }
+
+            .section {
+                padding: 20px 15px;
+            }
+
+            .badge {
+                padding: 6px 15px;
+                font-size: 0.75rem;
+            }
+
+            .quiz-date {
+                font-size: 1.1rem;
+            }
+
+            .quiz-topic {
+                font-size: 1.2rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-box {
+                padding: 20px;
+            }
+
+            .modal-content {
+                padding: 20px 15px;
+                max-height: 90vh;
+            }
+
+            .guidelines-list {
+                margin-top: 15px;
+            }
+
+            .guidelines-list li {
+                padding: 10px 0;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--deep-navy);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-gold);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--dark-gold);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 10px 10px 10px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            margin-top: 60px;
+        }
+
+        .footer strong {
+            color: var(--primary-gold);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="stars" id="stars"></div>
+    <div class="dunes">
+        <div class="dune-shape" style="left: -10%; width: 120%; height: 250px; opacity: 0.4;"></div>
+        <div class="dune-shape" style="left: -20%; width: 140%; height: 300px; opacity: 0.3; bottom: -50px;"></div>
+    </div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <!-- <div class="badge">Ramadan 1447 AH</div> -->
+            <h1>Ramadan<br>Quiz 2026</h1>
+            <!-- <div class="subtitle">"An online quiz competition based on Surah Al-Mumtahina"</div> -->
+            <div class="organization">SIO OMASSERY AREA</div>
+        </header>
+
+        <!-- Dynamic Timer Section -->
+        <div class="timer-section" id="timerSection">
+            <div class="timer-label" id="timerLabel">Next Quiz Starts In</div>
+            <div class="timer-display" id="timerDisplay">
+                <div class="time-unit">
+                    <span class="time-value" id="days">00</span>
+                    <div class="time-label">Days</div>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="hours">00</span>
+                    <div class="time-label">Hours</div>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="minutes">00</span>
+                    <div class="time-label">Minutes</div>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="seconds">00</span>
+                    <div class="time-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="cta-container">
+            <button class="btn btn-primary" onclick="startQuiz()">
+                <span>Start Quiz</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+            <button class="btn btn-secondary" onclick="openModal()">
+                <span>Read Guidelines</span>
+            </button>
+        </div>
+
+        <!-- About Section -->
+        <section class="section">
+            <h2 class="section-title">About</h2>
+            <p class="about-text">
+                A golden opportunity to get closer to the words of Allah during the holy days of Ramadan. This quiz competition is based on <span class="highlight">Surah Al-Mumtahina</span> .
+            </p>
+            
+            
+        </section>
+
+        <!-- Schedule Section -->
+        <section class="section">
+            <h2 class="section-title">Quiz Schedule</h2>
+            <div class="schedule-grid" id="scheduleGrid">
+                <!-- Cards will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                <img src="./Campaign.webp" alt="Campaign Title" style="height: 75px; max-width: 350px;">
+                <div style="width: 1px; height: 60px; background-color: rgba(212, 175, 55, 0.3);"></div>
+                <img src="./sio.webp" alt="SIO White Logo" style="height: 75px; max-width: 250px;">
+            </div>
+            <!-- <p style="margin-top: 10px; opacity: 0.7; text-align: center;">Ramadan Mubarak 1447 AH</p> -->
+        </footer>
+    </div>
+
+    <!-- Guidelines Modal -->
+    <div class="modal" id="guidelinesModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2 class="section-title" style="margin-top: 0;">Guidelines</h2>
+            <ul class="guidelines-list">
+                <li>The competition is exclusive to residents of Omassery Area.</li>
+                <li>Separate competitions will be held for Brothers and Sisters.</li>
+                <li>Each quiz will be open from 5:00 PM to 5:00 PM the next day on the scheduled date.</li>
+                <li>Two prizes will be awarded for men and two for women in each category.</li>
+                <li>Participants should reflect on Surah Al-Mumtahina before attempting the quiz.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Quiz Schedule Data
+        const quizSchedule = [
+            {
+                date: '2026-02-26',
+                part: 'Part 1',
+                title: 'Surah Al-Mumtahina',
+                subtitle: '',
+                link: 'https://forms.gle/pE7FVu9VUcDo4rZm8'
+            },
+            {
+                date: '2026-03-06',
+                part: 'Part 2',
+                title: 'Surah Al-Mumtahina',
+                subtitle: '',
+                link: 'https://forms.gle/pE7FVu9VUcDo4rZm8'
+            },
+            {
+                date: '2026-03-14',
+                part: 'Part 3',
+                title: 'Surah Al-Mumtahina',
+                subtitle: '',
+                link: 'https://forms.gle/pE7FVu9VUcDo4rZm8'
+            }
+        ];
+
+        // Create Stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const isMobile = window.innerWidth <= 768;
+            const starCount = isMobile ? 50 : 100; // Fewer stars on mobile for performance
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                
+                // Randomly assign star types
+                const rand = Math.random();
+                if (rand < 0.1) {
+                    star.className = 'star star-gold';
+                } else if (rand < 0.3) {
+                    star.className = 'star star-large';
+                } else {
+                    star.className = 'star';
+                }
+                
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                
+                // Vary sizes based on type
+                let size;
+                if (star.classList.contains('star-large')) {
+                    size = Math.random() * 4 + 3; // 3-7px
+                } else if (star.classList.contains('star-gold')) {
+                    size = Math.random() * 2 + 2; // 2-4px
+                } else {
+                    size = Math.random() * 2 + 1; // 1-3px
+                }
+                
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.animationDelay = Math.random() * 5 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Populate Schedule
+        function populateSchedule() {
+            const grid = document.getElementById('scheduleGrid');
+            const today = new Date();
+            today.setHours(0,0,0,0);
+
+            quizSchedule.forEach((quiz, index) => {
+                const quizDate = new Date(quiz.date);
+                const isPast = quizDate < today;
+                const isToday = quizDate.getTime() === today.getTime();
+                
+                const card = document.createElement('div');
+                card.className = `quiz-card ${isToday ? 'active' : ''} ${isPast ? 'past' : ''}`;
+                
+                const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const formattedDate = quizDate.toLocaleDateString('en-US', dateOptions);
+                
+                card.innerHTML = `
+                    <div class="quiz-date">${formattedDate}</div>
+                    <div class="quiz-part">${quiz.part}</div>
+                    <div class="quiz-topic">${quiz.title}</div>
+                    <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 0.95rem;">${quiz.subtitle}</p>
+                    <div class="quiz-time">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        10:00 AM - 10:00 PM
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // Timer Logic
+        function updateTimer() {
+            const now = new Date();
+            const currentHour = now.getHours();
+            
+            // Find current or next quiz
+            let targetDate = null;
+            let timerLabel = '';
+            let isActive = false;
+
+            for (let quiz of quizSchedule) {
+                const quizDate = new Date(quiz.date);
+                const quizStart = new Date(quiz.date);
+                quizStart.setHours(17, 0, 0, 0); // 5:00 PM start
+                const quizEnd = new Date(quiz.date);
+                quizEnd.setDate(quizEnd.getDate() + 1); // Next day
+                quizEnd.setHours(17, 0, 0, 0); // 5:00 PM end
+
+                // Check if quiz is currently active
+                if (now >= quizStart && now <= quizEnd) {
+                    targetDate = quizEnd;
+                    timerLabel = 'Current Quiz Ends In';
+                    isActive = true;
+                    break;
+                }
+                // Check if quiz is later today
+                else if (quizDate.toDateString() === now.toDateString() && now < quizStart) {
+                    targetDate = quizStart;
+                    timerLabel = 'Quiz Starts In';
+                    break;
+                }
+                // Check if quiz is in future
+                else if (quizDate > now) {
+                    targetDate = quizStart;
+                    timerLabel = 'Next Quiz Starts In';
+                    break;
+                }
+            }
+
+            // If all quizzes passed
+            if (!targetDate) {
+                document.getElementById('timerLabel').textContent = 'Competition Ended';
+                // document.getElementById('timerStatus').textContent = 'Completed';
+                // document.getElementById('timerStatus').className = 'timer-status status-ended';
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                
+                // Hide days box when competition ended
+                const daysElement = document.getElementById('days').parentElement;
+                daysElement.style.display = 'none';
+                return;
+            }
+
+            // Calculate difference
+            const diff = targetDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // Update display
+            document.getElementById('timerLabel').textContent = timerLabel;
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            
+            // Hide days box when days reach 0
+            const daysElement = document.getElementById('days').parentElement;
+            daysElement.style.display = days === 0 ? 'none' : 'block';
+
+            // Update button state based on active quiz
+            const startBtn = document.querySelector('.btn-primary');
+            if (isActive) {
+                startBtn.style.opacity = '1';
+                startBtn.style.pointerEvents = 'auto';
+                startBtn.innerHTML = '<span>Start Quiz</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+            } else {
+                startBtn.style.opacity = '0.6';
+                startBtn.style.pointerEvents = 'none';
+                startBtn.innerHTML = '<span>Quiz Not Available</span>';
+            }
+        }
+
+        // Modal Functions
+        function openModal() {
+            document.getElementById('guidelinesModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('guidelinesModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function startQuiz() {
+            const now = new Date();
+            let activeQuiz = null;
+
+            for (let quiz of quizSchedule) {
+                const quizStart = new Date(quiz.date);
+                quizStart.setHours(17, 0, 0, 0); // 5:00 PM start
+                const quizEnd = new Date(quiz.date);
+                quizEnd.setDate(quizEnd.getDate() + 1); // Next day
+                quizEnd.setHours(17, 0, 0, 0); // 5:00 PM end
+
+                if (now >= quizStart && now <= quizEnd) {
+                    activeQuiz = quiz;
+                    break;
+                }
+            }
+
+            if (activeQuiz) {
+                window.open(activeQuiz.link, '_blank');
+            }
+        }
+
+        // Close modal on outside click
+        document.getElementById('guidelinesModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Initialize
+        createStars();
+        populateSchedule();
+        updateTimer();
+        setInterval(updateTimer, 1000);
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
