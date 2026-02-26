@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ramadan Reflections Quiz 2026 - An online quiz competition based on Surah Al-Mumtahina for SIO Omassery Area residents. Test your knowledge of the Holy Quran during Ramadan.">
     <title>Ramadan Quiz 2026 | SIO Omassery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Malayalam:wght@400;700&display=swap" rel="stylesheet">
     <!-- Open Graph / WhatsApp preview image -->
     <meta property="og:title" content="Ramadan Quiz 2026 | SIO Omassery">
     <meta property="og:description" content="Ramadan Quiz 2026 ">
@@ -836,6 +836,14 @@
         .footer strong {
             color: var(--primary-gold);
         }
+
+        /* Malayalam Text Styling */
+        .malayalam-text {
+            font-family: 'Noto Sans Malayalam', sans-serif !important;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body>
@@ -927,15 +935,14 @@
             
             
             <!-- Malayalam Guidelines -->
-            <ul class="guidelines-list" style="font-family: 'Amiri', serif;">
-                <!-- <li>ഈ മത്സരം അമാസറി പ്രദേശത്തിന്റെ നിവാസികൾക്കായി മാത്രമാണ്.</li> -->
+            <ul class="guidelines-list malayalam-text">
                 <li>പുരുഷന്മാർക്കും സ്ത്രീകൾക്കും വെവ്വേറെ മത്സരങ്ങൾ നടത്തുന്നതായിരിക്കും.</li>
                 <li>ക്വിസ് നിശ്ചിത തീയതിയിലെ 4:00 PM മുതൽ അടുത്ത ദിവസം 4:00 PM വരെ നടത്തുന്നതായിരിക്കും.</li>
+                <li>മത്സരാർത്ഥികൾക്കായി 3 വിഭാഗങ്ങൾ ഉണ്ടായിരിക്കും: 30 വയസ്സിന് താഴെ, 30–50 വയസ്, 50 വയസിന് മുകളിൽ.</li>
                 <li>ഓരോ വിഭാഗത്തിലും പുരുഷന്മാർക്കും സ്ത്രീകൾക്കും വീതം 2 പേർക്കു സമ്മാനങ്ങൾ നൽകുന്നതായിരിക്കും.</li>
-                <!-- <li>ക്വിസിന് മുൻപായി പങ്കെടുക്കുന്നവർ സൂരത്തൽ മുമ്താഹിന ചിന്തിച്ചു നോക്കേണ്ടതാണ്.</li> -->
                 <li>ക്വിസ് Google Form വഴി നടത്തുന്നതായിരിക്കും.</li>
                 <li>ഒരേ സ്കോർ ലഭിക്കുന്ന സാഹചര്യത്തിൽ, ആദ്യം സബ്മിറ്റ് ചെയ്യുന്ന വ്യക്തിക്ക് മുൻഗണന നൽകും.</li>
-                <!-- <li>ഓരോ വിഭാഗത്തിലും ഏറ്റവും കൂടുതൽ മാർക്ക് നേടുന്ന 2 പേർക്ക് സമ്മാനങ്ങൾ ഉണ്ടായിരിക്കും.</li> -->
+                <li>ഓരോ വിഭാഗത്തിലും ഏറ്റവും കൂടുതൽ മാർക്ക് നേടുന്ന 2 പേർക്ക് സമ്മാനങ്ങൾ ഉണ്ടായിരിക്കും.</li>
             </ul>
         </div>
     </div>
@@ -1082,8 +1089,6 @@
             // If all quizzes passed
             if (!targetDate) {
                 document.getElementById('timerLabel').textContent = 'Competition Ended';
-                // document.getElementById('timerStatus').textContent = 'Completed';
-                // document.getElementById('timerStatus').className = 'timer-status status-ended';
                 document.getElementById('days').textContent = '00';
                 document.getElementById('hours').textContent = '00';
                 document.getElementById('minutes').textContent = '00';
@@ -1196,5 +1201,4 @@
 </body>
 
 </html>
-
 
