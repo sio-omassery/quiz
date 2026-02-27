@@ -955,21 +955,31 @@
                 part: 'Part 1',
                 title: 'Surah Al-Mumtahina',
                 subtitle: '',
-                link: 'https://forms.gle/pE7FVu9VUcDo4rZm8'
+                link: 'https://forms.gle/pE7FVu9VUcDo4rZm8',
+                // first day quiz ends at 5pm same day
+                startHour: 16,        // 4:00 PM
+                endHour: 17,          // 5:00 PM
+                endNextDay: false     // does not roll over
             },
             {
                 date: '2026-03-06',
                 part: 'Part 2',
                 title: 'Surah Al-Mumtahina',
                 subtitle: '',
-                link: 'https://forms.gle/pE7FVu9VUcDo4rZm8'
+                link: 'https://forms.gle/pE7FVu9VUcDo4rZm8',
+                startHour: 16,        // 4:00 PM
+                endHour: 16,          // 4:00 PM
+                endNextDay: true      // next day
             },
             {
                 date: '2026-03-14',
                 part: 'Part 3',
                 title: 'Surah Al-Mumtahina',
                 subtitle: '',
-                link: 'https://forms.gle/pE7FVu9VUcDo4rZm8'
+                link: 'https://forms.gle/pE7FVu9VUcDo4rZm8',
+                startHour: 16,
+                endHour: 16,
+                endNextDay: true
             }
         ];
 
@@ -1012,6 +1022,25 @@
             }
         }
 
+        // Helper to format time range based on quiz properties
+        function formatTimeRange(quiz) {
+            const startHour = quiz.startHour || 16;
+            const endHour = quiz.endHour !== undefined ? quiz.endHour : 16;
+            const startDate = new Date();
+            startDate.setHours(startHour, 0, 0, 0);
+            const endDate = new Date();
+            endDate.setHours(endHour, 0, 0, 0);
+            if (quiz.endNextDay) {
+                endDate.setDate(endDate.getDate() + 1);
+            }
+
+            const options = { hour: 'numeric', minute: '2-digit' };
+            const startStr = startDate.toLocaleTimeString('en-US', options);
+            const endStr = endDate.toLocaleTimeString('en-US', options) +
+                (quiz.endNextDay ? ' (Next Day)' : '');
+            return `${startStr} - ${endStr}`;
+        }
+
         // Populate Schedule
         function populateSchedule() {
             const grid = document.getElementById('scheduleGrid');
@@ -1039,7 +1068,7 @@
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M12 6v6l4 2"/>
                         </svg>
-                        4:00 PM - 4:00 PM (Next Day)
+                        ${formatTimeRange(quiz)}
                     </div>
                 `;
                 
@@ -1059,11 +1088,14 @@
 
             for (let quiz of quizSchedule) {
                 const quizDate = new Date(quiz.date);
+                // compute start/end using schedule properties
                 const quizStart = new Date(quiz.date);
-                quizStart.setHours(16, 0, 0, 0); // 4:00 PM start
+                quizStart.setHours(quiz.startHour || 16, 0, 0, 0);
                 const quizEnd = new Date(quiz.date);
-                quizEnd.setDate(quizEnd.getDate() + 1); // Next day
-                quizEnd.setHours(16, 0, 0, 0); // 4:00 PM end
+                quizEnd.setHours(quiz.endHour !== undefined ? quiz.endHour : 16, 0, 0, 0);
+                if (quiz.endNextDay) {
+                    quizEnd.setDate(quizEnd.getDate() + 1);
+                }
 
                 // Check if quiz is currently active
                 if (now >= quizStart && now <= quizEnd) {
